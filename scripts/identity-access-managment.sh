@@ -1,30 +1,30 @@
 #!/bin/bash
 
 # Lista de grupos e usuários para cada grupo
-group_users=(
+grupo_usuarios=(
   "GRP_ADM carlos maria joao"
   "GRP_VEN debora sebastiana roberto"
   "GRP_SEC josefina amanda rogerio"
 )
 
 # Senha comum para todos os usuários
-common_password="mudar123"
+senha_comum="mudar123"
 
 # Loop para criar grupos e usuários
-for group_user in "${group_users[@]}"; do
-  group="${group_user%% *}"
-  users="${group_user#* }"
+for group_user in "${grupo_usuarios[@]}"; do
+  grupo="${grupo_usuarios%% *}"
+  usuarios="${groupo_usuarios#* }"
 
-  echo "Criando grupo $group..."
-  sudo groupadd "$group"
+  echo "Criando grupo $grupo..."
+  sudo groupadd "$grupo"
 
-  echo "Criando usuários do grupo $group..."
-  for user in $users; do
-    echo "Criando usuário $user..."
-    sudo useradd -m -G "$group" "$user"
-    echo "$user:$common_password" | sudo chpasswd
-    echo "Forçando troca de senha para $user no próximo login..."
-    sudo passwd -e "$user"
+  echo "Criando usuários do grupo $grupo..."
+  for usuario in $usuarios; do
+    echo "Criando usuário $usuario..."
+    sudo useradd -m -G "$grupo" "$usuario"
+    echo "$usario:$senha_comum" | sudo chpasswd
+    echo "Forçando troca de senha para $usuario no próximo login..."
+    sudo passwd -e "$usuario"
   done
 done
 
