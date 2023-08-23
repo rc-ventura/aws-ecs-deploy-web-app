@@ -11,7 +11,7 @@ grupo_usuarios=(
 senha_comum="mudar123"
 
 # Loop para criar grupos e usuários
-for group_user in "${grupo_usuarios[@]}"; do
+for grupo_usuarios in "${grupo_usuarios[@]}"; do
   grupo="${grupo_usuarios%% *}"
   usuarios="${groupo_usuarios#* }"
 
