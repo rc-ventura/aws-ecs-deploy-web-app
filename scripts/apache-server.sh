@@ -19,14 +19,14 @@ wget https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.z
 unzip /tmp/main.zip -d /tmp
 
 # Copiar arquivos para o diretório padrão do Apache (exemplo: /var/www/html/)
-apache_default_dir="/var/www/html/"
+apache_local_dir="/var/www/html/"
 
 if [ -d /tmp/linux-site-dio-main ]; then
-    echo "Copiando arquivos para o diretório padrão do Apache..."
+    echo "Copiando arquivos para o diretório local do Apache..."
     
-    sudo cp -r /tmp/linux-site-dio-main/* "$apache_default_dir"
-    sudo chown -R www-data:www-data "$apache_default_dir"
-    sudo chmod -R 755 "$apache_default_dir"
+    sudo cp -r /tmp/linux-site-dio-main/* "$apache_local_dir"
+    sudo chown -R www-data:www-data "$apache_local_dir"
+    sudo chmod -R 755 "$apache_local_dir"
     echo "Aplicação copiada e configurada."
 else
     echo "Erro: Diretório de extração não encontrado."
