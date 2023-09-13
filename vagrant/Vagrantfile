@@ -72,6 +72,11 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
     config.vm.provision "shell", path: "../scripts/identity-access-managment.sh"
+<<<<<<< HEAD
+=======
+    config.vm.provision "shell", path: "../scripts/apache-server.sh"
+
+>>>>>>> 9183025c6327d084f13967300fd70ee49b03ff96
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
